@@ -19,11 +19,10 @@
    ===================================================================== */
 const SHOP = {
   name: "Hyperion Labs",
-  telegram: "hyperionlabs",   // Your Telegram username, without the @ (shown to customers as a backup contact)
-  orderEndpoint: "/api/order", // Leave as is. Orders are sent here, then on to your Telegram
+  whatsapp: "447525211256",   // Your WhatsApp number: 44 then your number without the first 0, no spaces (e.g. 447712345678)
   currency: "£",
-  delivery: 3.95,             // Standard UK delivery charge
-  freeDeliveryOver: 75,       // Free delivery when basket is this much or more (set 0 to switch off)
+  delivery: 5.00,             // Standard UK delivery charge
+  freeDeliveryOver: 0,       // Free delivery when basket is this much or more (set 0 to switch off)
 };
 
 /* =====================================================================
@@ -282,7 +281,7 @@ body.owner #owner{display:block}
 <section class="sheet" id="checkoutSheet" role="dialog" aria-modal="true" aria-labelledby="coTitle">
   <div class="grab"></div><button class="close" data-close aria-label="Close">×</button>
   <h2 id="coTitle">Delivery details</h2>
-  <p class="sub">No payment is taken here. We receive your order instantly and send you a payment request.</p>
+  <p class="sub">No payment is taken here. Your order is sent to us on WhatsApp and we reply with a payment request.</p>
   <form id="checkout" novalidate>
     <div class="legend">You</div>
     <label data-f>Full name<input name="name" autocomplete="name" required><span class="err">Please enter your name</span></label>
@@ -300,14 +299,6 @@ body.owner #owner{display:block}
       <label><input type="radio" name="pay" value="Payment request link" checked><b>Payment link</b><small>We send a secure payment request</small></label>
       <label><input type="radio" name="pay" value="Crypto"><b>Crypto</b><small>We send a wallet address</small></label>
     </div>
-    <div class="legend">Send my payment request by</div>
-    <div class="choice" style="grid-template-columns:1fr 1fr 1fr">
-      <label><input type="radio" name="contact" value="WhatsApp" checked><b>WhatsApp</b></label>
-      <label><input type="radio" name="contact" value="Telegram"><b>Telegram</b></label>
-      <label><input type="radio" name="contact" value="Email"><b>Email</b></label>
-    </div>
-    <label data-f id="tgWrap" hidden>Your Telegram username<input name="tguser" placeholder="@username" autocapitalize="off"><span class="err">Please enter your Telegram username</span></label>
-    <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
     <label>Order notes (optional)<textarea name="notes" placeholder="Anything we should know?"></textarea></label>
     <label class="tick" data-f><input type="checkbox" name="agree" required> <span>I understand my order is confirmed once payment is received, and these products are food supplements.</span><span class="err" style="grid-column:1/-1">Please tick to continue</span></label>
     <div class="totals" id="coTotals"></div>
@@ -320,28 +311,24 @@ body.owner #owner{display:block}
 <section class="sheet" id="doneSheet" role="dialog" aria-modal="true" aria-labelledby="doneTitle">
   <div class="grab"></div><button class="close" data-close aria-label="Close">×</button>
   <div class="done">
-    <div id="okView">
-      <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-      <h2 id="doneTitle">Order received</h2>
-      <div class="ref" id="refNo"></div>
-      <div class="steps">
-        <div><i>1</i><span>We've got your order. Keep your reference handy.</span></div>
-        <div><i>2</i><span>We'll send a payment request for <b id="doneTotal"></b> by <b id="doneVia"></b>.</span></div>
-        <div><i>3</i><span>Once paid, your order is packed and dispatched.</span></div>
-      </div>
+    <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h2 id="doneTitle">One last step</h2>
+    <div class="ref" id="refNo"></div>
+    <div class="steps">
+      <div><i>1</i><span>Tap <b>Send order on WhatsApp</b>. Your order message is already written. Just press send.</span></div>
+      <div><i>2</i><span>We'll reply with a payment request for <b id="doneTotal"></b>.</span></div>
+      <div><i>3</i><span>Once paid, your order is packed and dispatched.</span></div>
     </div>
-    <div id="failView" hidden>
-      <h2>Nearly there</h2>
-      <p class="sub">We couldn't send your order automatically. Copy it and message it to us on Telegram, and we'll take it from there.</p>
-      <div class="ref" id="refNo2"></div>
-      <div class="stack">
-        <button class="btn btn-gold" id="copyOrder">Copy order</button>
-        <a class="btn btn-dark" id="tgLink" href="#" target="_blank" rel="noopener">Open Telegram</a>
-      </div>
-      <p class="sub" style="margin-top:12px">Our Telegram: <b id="tgName"></b></p>
-      <pre class="msg" id="msgPreview"></pre>
+    <div class="stack">
+      <a class="btn wa" id="waLink" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.700-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.700 6.700 0 0 1-3.300-2.900c-.3-.4.2-.4.700-1.400.1-.2 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.200 5.200 5.200 0 0 0 1.100 2.700 11.800 11.800 0 0 0 4.500 4c1.700.7 2.300.8 3.200.6.5-.1 1.500-.6 1.700-1.200.2-.6.2-1.100.2-1.200-.1-.1-.3-.2-.5-.3z"/></svg>
+        Send order on WhatsApp
+      </a>
+      <button class="btn btn-line" id="copyOrder">Copy order text</button>
     </div>
-    <button class="btn btn-line" id="newOrder" style="margin-top:6px">Back to shop</button>
+    <p class="sub" style="margin-top:12px">WhatsApp not opening? Copy the order and message us on <b id="waNum"></b>.</p>
+    <pre class="msg" id="msgPreview"></pre>
+    <button class="btn btn-dark" id="newOrder">Back to shop</button>
   </div>
 </section>
 
@@ -442,7 +429,7 @@ body.owner #owner{display:block}
         <div class="mini"><button data-dec="${esc(i.id)}" aria-label="Remove one">−</button><span>${i.qty}</span><button data-inc="${esc(i.id)}" aria-label="Add one">+</button></div>
       </div>`).join("") +
       `<div class="totals">${totalsHTML()}</div>
-       <div class="note">Next: add your delivery details. We receive your order instantly and send you a payment request. Nothing is charged on this site.</div>
+       <div class="note">Next: add your delivery details. Your order is sent to us on WhatsApp and we'll send you a payment request. Nothing is charged on this site.</div>
        <button class="btn btn-gold" id="toCheckout">Checkout</button>`;
   }
 
@@ -475,30 +462,21 @@ body.owner #owner{display:block}
     addr1: v => v.trim().length >= 3,
     town: v => v.trim().length >= 2,
     postcode: v => /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i.test(v.trim()),
-    agree: (v, el) => el.checked,
-    tguser: (v) => form.elements.contact.value !== "Telegram" || v.replace(/^@/,"").trim().length >= 3
+    agree: (v, el) => el.checked
   };
   try { const saved = JSON.parse(localStorage.getItem("hl_details") || "{}"); for (const k in saved) if (form.elements[k] && form.elements[k].type !== "checkbox" && form.elements[k].type !== "radio") form.elements[k].value = saved[k]; } catch(e){}
 
-  const syncContact = () => { const tg = form.elements.contact.value === "Telegram"; $("#tgWrap").hidden = !tg; if (!tg) $("#tgWrap").classList.remove("invalid"); };
-  form.addEventListener("change", e => { if (e.target.name === "contact") syncContact(); });
-  syncContact();
-
   form.addEventListener("input", e => { const w = e.target.closest("[data-f]"); if (w) w.classList.remove("invalid"); });
-  let sending = false;
-  form.addEventListener("submit", async e => {
+  form.addEventListener("submit", e => {
     e.preventDefault();
-    if (sending) return;
     if (!items().length){ show("#cartSheet"); return; }
     let first = null;
     for (const k in rules){ const el = form.elements[k]; const ok = rules[k](el.value, el); el.closest("[data-f]").classList.toggle("invalid", !ok); if (!ok && !first) first = el; }
     if (first){ first.focus(); first.scrollIntoView({block:"center", behavior:"smooth"}); return; }
     const f = Object.fromEntries(new FormData(form));
     f.postcode = f.postcode.trim().toUpperCase();
-    try { const { agree, pay, notes, website, ...keep } = f; localStorage.setItem("hl_details", JSON.stringify(keep)); } catch(e){}
-    sending = true;
-    const btn = $("#placeBtn"); btn.disabled = true; btn.textContent = "Sending order…";
-    try { await finish(f); } finally { sending = false; btn.disabled = false; btn.textContent = "Place order"; }
+    try { const { agree, pay, notes, ...keep } = f; localStorage.setItem("hl_details", JSON.stringify(keep)); } catch(e){}
+    finish(f);
   });
 
   function orderRef(){
@@ -506,55 +484,41 @@ body.owner #owner{display:block}
     return "HL-" + String(d.getFullYear()).slice(2) + p(d.getMonth()+1) + p(d.getDate()) + "-" + Math.random().toString(36).slice(2,6).toUpperCase();
   }
 
-  async function finish(f){
+  function finish(f){
     const ref = orderRef(), list = items(), d = delivery();
-    const contactLine = f.contact === "Telegram" ? `Telegram: @${f.tguser.trim().replace(/^@/,"")}` : f.contact;
     const lines = [
-      `🛒 NEW ORDER — ${SHOP.name.toUpperCase()}`,
+      `*NEW ORDER — ${SHOP.name.toUpperCase()}*`,
       `Ref: ${ref}`,
       ``,
-      `ITEMS`,
+      `*Items*`,
       ...list.map(i => `• ${i.qty} × ${i.name} (${i.size}) — ${money(i.price * i.qty)}`),
       ``,
       `Subtotal: ${money(subtotal())}`,
       `Delivery: ${d ? money(d) : "Free"}`,
-      `TOTAL: ${money(total())}`,
+      `*Total: ${money(total())}*`,
       ``,
-      `Pays by: ${f.pay}`,
-      `Send payment request by: ${contactLine}`,
+      `*Payment method:* ${f.pay}`,
       ``,
-      `CUSTOMER`,
+      `*Customer*`,
       f.name.trim(),
       f.phone.trim(),
       f.email.trim(),
       ``,
-      `DELIVER TO`,
+      `*Deliver to*`,
       f.addr1.trim(),
       ...(f.addr2.trim() ? [f.addr2.trim()] : []),
       f.town.trim(),
       f.postcode,
-      ...(f.notes.trim() ? [``, `NOTES: ${f.notes.trim()}`] : [])
+      ...(f.notes.trim() ? [``, `*Notes:* ${f.notes.trim()}`] : [])
     ];
     const msg = lines.join("\n");
-
-    let sent = false;
-    try {
-      const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 12000);
-      const r = await fetch(SHOP.orderEndpoint, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ text: msg, website: f.website || "" }), signal: ctrl.signal });
-      clearTimeout(t);
-      sent = r.ok && (await r.json().catch(() => ({}))).ok === true;
-    } catch(e){ sent = false; }
-
-    $("#okView").hidden = !sent; $("#failView").hidden = sent;
-    $("#refNo").textContent = $("#refNo2").textContent = ref;
+    const num = SHOP.whatsapp.replace(/\D/g,"");
+    $("#refNo").textContent = ref;
     $("#doneTotal").textContent = money(total());
-    $("#doneVia").textContent = f.contact;
-    const tg = SHOP.telegram.replace(/^@/,"");
-    $("#tgLink").href = "https://t.me/" + encodeURIComponent(tg);
-    $("#tgName").textContent = "@" + tg;
+    $("#waLink").href = "https://wa.me/" + num + "?text=" + encodeURIComponent(msg);
+    $("#waNum").textContent = "+" + num;
     $("#msgPreview").textContent = msg;
-    $("#copyOrder").onclick = () => copy(msg, "Order copied. Paste it into Telegram");
-    if (sent){ cart = {}; save(); render(); form.elements.agree.checked = false; form.elements.notes.value = ""; }
+    $("#copyOrder").onclick = () => copy(msg, "Order copied");
     show("#doneSheet");
   }
   $("#newOrder").onclick = () => { cart = {}; save(); render(); form.elements.agree.checked = false; form.elements.notes.value = ""; hide(); window.scrollTo({top:0, behavior:"smooth"}); };
