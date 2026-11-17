@@ -21,13 +21,15 @@ const SHOP = {
   name: "Hyperion Labs",
   whatsapp: "447000000000",   // Your WhatsApp number: 44 then your number without the first 0, no spaces (e.g. 447712345678)
   currency: "£",
-  delivery: 5.00,             // Standard UK delivery charge
-  freeDeliveryOver: 0,       // Free delivery when basket is this much or more (set 0 to switch off)
+  delivery: 3.95,             // Standard UK delivery charge
+  freeDeliveryOver: 75,       // Free delivery when basket is this much or more (set 0 to switch off)
 };
 
 /* =====================================================================
    PRODUCTS — to add one, copy a block { ... }, paste it below the last,
    and change the details. Keep the comma between blocks.
+   show: false  = hidden from customers. Change to show: true to put it live.
+   inStock: false = shown but marked "Out of stock".
    Or open the page with #owner at the end of the address to use the
    product builder, which writes the block for you.
    ===================================================================== */
@@ -58,6 +60,509 @@ const PRODUCTS = [
     tag: "Amino",
     desc: "Pure taurine powder. Unflavoured, single ingredient, no fillers or additives.",
     inStock: true
+  },
+
+  /* ---------- READY TO EDIT: hidden until you set a price and change show: false to show: true ---------- */
+
+  {
+    id: "l-leucine-500g",
+    name: "L-Leucine",
+    size: "500g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Leucine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-isoleucine-500g",
+    name: "L-Isoleucine",
+    size: "500g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Isoleucine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-valine-500g",
+    name: "L-Valine",
+    size: "500g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Valine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "bcaa-2-1-1-500g",
+    name: "BCAA 2:1:1",
+    size: "500g",
+    price: 0,
+    tag: "Amino",
+    desc: "BCAA 2:1:1 powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "bcaa-4-1-1-500g",
+    name: "BCAA 4:1:1",
+    size: "500g",
+    price: 0,
+    tag: "Amino",
+    desc: "BCAA 4:1:1 powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "essential-amino-acids-eaa-500g",
+    name: "Essential Amino Acids (EAA)",
+    size: "500g",
+    price: 0,
+    tag: "Amino",
+    desc: "Essential Amino Acids (EAA) powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-arginine-500g",
+    name: "L-Arginine",
+    size: "500g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Arginine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-arginine-hcl-500g",
+    name: "L-Arginine HCl",
+    size: "500g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Arginine HCl powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "arginine-akg-250g",
+    name: "Arginine AKG",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure Arginine AKG powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-citrulline-250g",
+    name: "L-Citrulline",
+    size: "250g",
+    price: 0,
+    tag: "Pump",
+    desc: "Pure L-Citrulline powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "citrulline-malate-2-1-500g",
+    name: "Citrulline Malate 2:1",
+    size: "500g",
+    price: 0,
+    tag: "Pump",
+    desc: "Pure Citrulline Malate 2:1 powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-ornithine-250g",
+    name: "L-Ornithine",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Ornithine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "beta-alanine-500g",
+    name: "Beta-Alanine",
+    size: "500g",
+    price: 0,
+    tag: "Performance",
+    desc: "Pure Beta-Alanine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-carnitine-l-tartrate-250g",
+    name: "L-Carnitine L-Tartrate",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Carnitine L-Tartrate powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "acetyl-l-carnitine-250g",
+    name: "Acetyl-L-Carnitine",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure Acetyl-L-Carnitine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-tyrosine-250g",
+    name: "L-Tyrosine",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Tyrosine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-theanine-100g",
+    name: "L-Theanine",
+    size: "100g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Theanine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "glycine-500g",
+    name: "Glycine",
+    size: "500g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure Glycine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-lysine-500g",
+    name: "L-Lysine",
+    size: "500g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Lysine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-methionine-250g",
+    name: "L-Methionine",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Methionine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-threonine-250g",
+    name: "L-Threonine",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Threonine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-phenylalanine-250g",
+    name: "L-Phenylalanine",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Phenylalanine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-histidine-250g",
+    name: "L-Histidine",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Histidine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-alanine-500g",
+    name: "L-Alanine",
+    size: "500g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Alanine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-proline-250g",
+    name: "L-Proline",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Proline powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-serine-250g",
+    name: "L-Serine",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Serine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-cysteine-250g",
+    name: "L-Cysteine",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Cysteine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "betaine-anhydrous-500g",
+    name: "Betaine Anhydrous",
+    size: "500g",
+    price: 0,
+    tag: "Performance",
+    desc: "Pure Betaine Anhydrous powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "creatine-hcl-250g",
+    name: "Creatine HCl",
+    size: "250g",
+    price: 0,
+    tag: "Strength",
+    desc: "Pure Creatine HCl powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "calcium-hmb-250g",
+    name: "Calcium HMB",
+    size: "250g",
+    price: 0,
+    tag: "Performance",
+    desc: "Pure Calcium HMB powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "hydrolysed-collagen-500g",
+    name: "Hydrolysed Collagen",
+    size: "500g",
+    price: 0,
+    tag: "Protein",
+    desc: "Hydrolysed Collagen powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "whey-protein-isolate-1kg",
+    name: "Whey Protein Isolate",
+    size: "1kg",
+    price: 0,
+    tag: "Protein",
+    desc: "Whey Protein Isolate powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "pea-protein-isolate-1kg",
+    name: "Pea Protein Isolate",
+    size: "1kg",
+    price: 0,
+    tag: "Protein",
+    desc: "Pea Protein Isolate powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "rice-protein-1kg",
+    name: "Rice Protein",
+    size: "1kg",
+    price: 0,
+    tag: "Protein",
+    desc: "Rice Protein powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cluster-dextrin-1kg",
+    name: "Cluster Dextrin",
+    size: "1kg",
+    price: 0,
+    tag: "Carbs",
+    desc: "Cluster Dextrin powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "dextrose-1kg",
+    name: "Dextrose",
+    size: "1kg",
+    price: 0,
+    tag: "Carbs",
+    desc: "Dextrose powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "creatine-monohydrate-250g",
+    name: "Creatine Monohydrate",
+    size: "250g",
+    price: 0,
+    tag: "Strength",
+    desc: "Pure Creatine Monohydrate powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "creatine-monohydrate-1kg",
+    name: "Creatine Monohydrate",
+    size: "1kg",
+    price: 0,
+    tag: "Strength",
+    desc: "Pure Creatine Monohydrate powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-glutamine-250g",
+    name: "L-Glutamine",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Glutamine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-glutamine-1kg",
+    name: "L-Glutamine",
+    size: "1kg",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Glutamine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "taurine-250g",
+    name: "Taurine",
+    size: "250g",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure Taurine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "taurine-1kg",
+    name: "Taurine",
+    size: "1kg",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure Taurine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "beta-alanine-1kg",
+    name: "Beta-Alanine",
+    size: "1kg",
+    price: 0,
+    tag: "Performance",
+    desc: "Pure Beta-Alanine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "l-leucine-1kg",
+    name: "L-Leucine",
+    size: "1kg",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure L-Leucine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "bcaa-2-1-1-1kg",
+    name: "BCAA 2:1:1",
+    size: "1kg",
+    price: 0,
+    tag: "Amino",
+    desc: "BCAA 2:1:1 powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "essential-amino-acids-eaa-1kg",
+    name: "Essential Amino Acids (EAA)",
+    size: "1kg",
+    price: 0,
+    tag: "Amino",
+    desc: "Essential Amino Acids (EAA) powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "citrulline-malate-2-1-1kg",
+    name: "Citrulline Malate 2:1",
+    size: "1kg",
+    price: 0,
+    tag: "Pump",
+    desc: "Pure Citrulline Malate 2:1 powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "glycine-1kg",
+    name: "Glycine",
+    size: "1kg",
+    price: 0,
+    tag: "Amino",
+    desc: "Pure Glycine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "betaine-anhydrous-1kg",
+    name: "Betaine Anhydrous",
+    size: "1kg",
+    price: 0,
+    tag: "Performance",
+    desc: "Pure Betaine Anhydrous powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "hydrolysed-collagen-1kg",
+    name: "Hydrolysed Collagen",
+    size: "1kg",
+    price: 0,
+    tag: "Protein",
+    desc: "Hydrolysed Collagen powder. Unflavoured.",
+    inStock: true,
+    show: false
   }
 ];
 /* ===================== END OF SETTINGS ===================== */
@@ -108,8 +613,8 @@ main{max-width:1080px;margin:0 auto;padding:28px 16px}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
 .card .art{background:linear-gradient(160deg,var(--ivory-2),#E6DBC3);height:220px;display:grid;place-items:center;position:relative}
 .card .art svg{height:190px;width:auto}
-.tag{position:absolute;top:12px;left:12px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;background:var(--black);color:var(--gold-2);padding:5px 9px;border-radius:999px;font-weight:600}
-.card .body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tag{align-self:flex-start;margin-bottom:4px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;background:var(--black);color:var(--gold-2);padding:5px 9px;border-radius:999px;font-weight:600}
+.card .body{padding:20px;border-top:3px solid var(--gold);display:flex;flex-direction:column;gap:6px;flex:1}
 .card h3{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;line-height:1.1}
 .meta{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
 .price{font-weight:600;color:var(--ink);font-size:18px}
@@ -342,7 +847,8 @@ body.owner #owner{display:block}
   const $ = s => document.querySelector(s);
   const money = n => SHOP.currency + Number(n).toFixed(2);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-  const byId = id => PRODUCTS.find(p => p.id === id);
+  const LIVE = PRODUCTS.filter(p => p.show !== false);
+  const byId = id => LIVE.find(p => p.id === id);
 
   /* Product artwork: a gold-labelled pouch, generated so no photos are needed */
   function pouch(p, small){
@@ -387,8 +893,8 @@ body.owner #owner{display:block}
     else action = `<button class="btn btn-dark" ${preview ? "" : `data-inc="${esc(p.id)}"`}>Add to basket</button>`;
     const short = p.desc && p.desc.length > 110 ? esc(p.desc.slice(0,105).replace(/\s+\S*$/,"")) + "…" : esc(p.desc);
     return `<article class="card">
-      <div class="art">${p.tag ? `<span class="tag">${esc(p.tag)}</span>` : ""}${pouch(p)}</div>
       <div class="body">
+        ${p.tag ? `<span class="tag">${esc(p.tag)}</span>` : ""}
         <h3>${esc(p.name)}</h3>
         <div class="meta"><span>${esc(p.size)}</span><span class="price">${money(p.price)}</span></div>
         <p class="desc">${short}</p>
@@ -398,8 +904,8 @@ body.owner #owner{display:block}
   }
 
   function render(){
-    $("#grid").innerHTML = PRODUCTS.map(p => cardHTML(p)).join("");
-    $("#count").textContent = PRODUCTS.length + (PRODUCTS.length === 1 ? " product" : " products");
+    $("#grid").innerHTML = LIVE.map(p => cardHTML(p)).join("");
+    $("#count").textContent = LIVE.length + (LIVE.length === 1 ? " product" : " products");
     const n = qtyCount();
     $("#badge").hidden = !n; $("#badge").textContent = n;
     $("#bar").classList.toggle("show", n > 0 && !document.body.classList.contains("owner"));
@@ -421,7 +927,6 @@ body.owner #owner{display:block}
     const list = items();
     if (!list.length){ $("#cartBody").innerHTML = `<div class="empty"><p>Your basket is empty.</p><button class="btn btn-dark" style="margin-top:16px" data-close>Browse the range</button></div>`; return; }
     $("#cartBody").innerHTML = list.map(i => `<div class="line-item">
-        <div class="thumb">${pouch(i, true)}</div>
         <div class="info"><b>${esc(i.name)}</b><small>${esc(i.size)} · ${money(i.price)}</small></div>
         <div class="mini"><button data-dec="${esc(i.id)}" aria-label="Remove one">−</button><span>${i.qty}</span><button data-inc="${esc(i.id)}" aria-label="Add one">+</button></div>
       </div>`).join("") +
@@ -441,7 +946,7 @@ body.owner #owner{display:block}
     const t = e.target.closest("button,a"); if (!t) return;
     if (t.dataset.inc){ const was = cart[t.dataset.inc] || 0; setQty(t.dataset.inc, was + 1); if (!was) toast(byId(t.dataset.inc).name + " added"); }
     else if (t.dataset.dec){ setQty(t.dataset.dec, (cart[t.dataset.dec] || 0) - 1); }
-    else if (t.dataset.detail){ const p = byId(t.dataset.detail); $("#detailBody").innerHTML = `<div style="background:var(--ivory-2);border-radius:14px;display:grid;place-items:center;padding:16px;margin-bottom:14px"><div style="height:200px">${pouch(p)}</div></div><h2>${esc(p.name)}</h2><p class="sub">${esc(p.size)} · ${money(p.price)}</p><p style="font-size:14.5px;margin-bottom:18px">${esc(p.desc)}</p>${p.inStock ? `<button class="btn btn-dark" data-inc="${esc(p.id)}">Add to basket</button>` : ""}`; show("#detailSheet"); }
+    else if (t.dataset.detail){ const p = byId(t.dataset.detail); $("#detailBody").innerHTML = `<h2>${esc(p.name)}</h2><p class="sub">${esc(p.size)} · ${money(p.price)}</p><p style="font-size:14.5px;margin-bottom:18px">${esc(p.desc)}</p>${p.inStock ? `<button class="btn btn-dark" data-inc="${esc(p.id)}">Add to basket</button>` : ""}`; show("#detailSheet"); }
     else if (t.hasAttribute("data-close")) hide();
     else if (t.id === "toCheckout"){ $("#coTotals").innerHTML = totalsHTML(); show("#checkoutSheet"); }
   });
@@ -534,7 +1039,7 @@ body.owner #owner{display:block}
   function renderOwner(){
     const p = ownerProduct();
     $("#ownerPreview").innerHTML = cardHTML(p, true);
-    $("#ownerCode").textContent = `  ,{\n    id: ${js(p.id)},\n    name: ${js(p.name)},\n    size: ${js(p.size)},\n    price: ${p.price},\n    tag: ${js(p.tag)},\n    desc: ${js(p.desc)},\n    inStock: ${p.inStock}\n  }`;
+    $("#ownerCode").textContent = `  ,{\n    id: ${js(p.id)},\n    name: ${js(p.name)},\n    size: ${js(p.size)},\n    price: ${p.price},\n    tag: ${js(p.tag)},\n    desc: ${js(p.desc)},\n    inStock: ${p.inStock},\n    show: true\n  }`;
   }
   $("#ownerForm").addEventListener("input", renderOwner);
   $("#ownerForm").addEventListener("change", renderOwner);
