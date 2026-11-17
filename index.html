@@ -19,10 +19,10 @@
    ===================================================================== */
 const SHOP = {
   name: "Hyperion Labs",
-  whatsapp: "447525211256",   // Your WhatsApp number: 44 then your number without the first 0, no spaces (e.g. 447712345678)
+  whatsapp: "447000000000",   // Your WhatsApp number: 44 then your number without the first 0, no spaces (e.g. 447712345678)
   currency: "£",
-  delivery: 5.00,             // Standard UK delivery charge
-  freeDeliveryOver: 0,       // Free delivery when basket is this much or more (set 0 to switch off)
+  delivery: 3.95,             // Standard UK delivery charge
+  freeDeliveryOver: 75,       // Free delivery when basket is this much or more (set 0 to switch off)
 };
 
 /* =====================================================================
@@ -225,7 +225,7 @@ body.owner #owner{display:block}
   <section class="hero">
     <div class="eyebrow">Raw amino powders</div>
     <h1>Pure. Unflavoured.<br><em>Nothing added.</em></h1>
-    <p>Single-ingredient powders for people who know what they're taking. Choose your products, add your delivery details, and we'll send you a payment request.</p>
+    <p>Single-ingredient powders for people who know what they're taking. Choose your products, add your delivery details, and we'll send you crypto payment details on WhatsApp.</p>
     <div class="pills"><span class="pill">Single ingredient</span><span class="pill">No fillers</span><span class="pill">UK delivery</span></div>
   </section>
 
@@ -237,7 +237,7 @@ body.owner #owner{display:block}
   <footer>
     <b>HYPERION LABS</b>
     <div>Food supplements. Do not exceed the recommended daily dose. Food supplements should not be used as a substitute for a varied, balanced diet and a healthy lifestyle. Keep out of reach of young children. Not suitable for pregnant or breastfeeding women.</div>
-    <div>Orders are confirmed by message and paid by payment request. Nothing is charged on this site.</div>
+    <div>Orders are placed via WhatsApp and paid in crypto only. Nothing is charged on this site.</div>
   </footer>
 </div>
 
@@ -281,7 +281,7 @@ body.owner #owner{display:block}
 <section class="sheet" id="checkoutSheet" role="dialog" aria-modal="true" aria-labelledby="coTitle">
   <div class="grab"></div><button class="close" data-close aria-label="Close">×</button>
   <h2 id="coTitle">Delivery details</h2>
-  <p class="sub">No payment is taken here. Your order is sent to us on WhatsApp and we reply with a payment request.</p>
+  <p class="sub">No payment is taken here. Your order is sent to us on WhatsApp and we reply with crypto payment details.</p>
   <form id="checkout" novalidate>
     <div class="legend">You</div>
     <label data-f>Full name<input name="name" autocomplete="name" required><span class="err">Please enter your name</span></label>
@@ -294,11 +294,8 @@ body.owner #owner{display:block}
       <label data-f>Town / city<input name="town" autocomplete="address-level2" required><span class="err">Required</span></label>
       <label data-f>Postcode<input name="postcode" autocomplete="postal-code" required style="text-transform:uppercase"><span class="err">Check postcode</span></label>
     </div>
-    <div class="legend">How would you like to pay?</div>
-    <div class="choice">
-      <label><input type="radio" name="pay" value="Payment request link" checked><b>Payment link</b><small>We send a secure payment request</small></label>
-      <label><input type="radio" name="pay" value="Crypto"><b>Crypto</b><small>We send a wallet address</small></label>
-    </div>
+    <div class="legend">Payment</div>
+    <div class="note" style="margin:0">We accept <b>crypto only</b>. After you send your order, we'll reply on WhatsApp with the wallet address and exact amount.</div>
     <label>Order notes (optional)<textarea name="notes" placeholder="Anything we should know?"></textarea></label>
     <label class="tick" data-f><input type="checkbox" name="agree" required> <span>I understand my order is confirmed once payment is received, and these products are food supplements.</span><span class="err" style="grid-column:1/-1">Please tick to continue</span></label>
     <div class="totals" id="coTotals"></div>
@@ -316,7 +313,7 @@ body.owner #owner{display:block}
     <div class="ref" id="refNo"></div>
     <div class="steps">
       <div><i>1</i><span>Tap <b>Send order on WhatsApp</b>. Your order message is already written. Just press send.</span></div>
-      <div><i>2</i><span>We'll reply with a payment request for <b id="doneTotal"></b>.</span></div>
+      <div><i>2</i><span>We'll reply with the wallet address and amount for <b id="doneTotal"></b>.</span></div>
       <div><i>3</i><span>Once paid, your order is packed and dispatched.</span></div>
     </div>
     <div class="stack">
@@ -429,7 +426,7 @@ body.owner #owner{display:block}
         <div class="mini"><button data-dec="${esc(i.id)}" aria-label="Remove one">−</button><span>${i.qty}</span><button data-inc="${esc(i.id)}" aria-label="Add one">+</button></div>
       </div>`).join("") +
       `<div class="totals">${totalsHTML()}</div>
-       <div class="note">Next: add your delivery details. Your order is sent to us on WhatsApp and we'll send you a payment request. Nothing is charged on this site.</div>
+       <div class="note">Next: add your delivery details. Your order is sent to us on WhatsApp and we'll reply with crypto payment details. Nothing is charged on this site.</div>
        <button class="btn btn-gold" id="toCheckout">Checkout</button>`;
   }
 
@@ -475,7 +472,7 @@ body.owner #owner{display:block}
     if (first){ first.focus(); first.scrollIntoView({block:"center", behavior:"smooth"}); return; }
     const f = Object.fromEntries(new FormData(form));
     f.postcode = f.postcode.trim().toUpperCase();
-    try { const { agree, pay, notes, ...keep } = f; localStorage.setItem("hl_details", JSON.stringify(keep)); } catch(e){}
+    try { const { agree, notes, ...keep } = f; localStorage.setItem("hl_details", JSON.stringify(keep)); } catch(e){}
     finish(f);
   });
 
@@ -497,7 +494,7 @@ body.owner #owner{display:block}
       `Delivery: ${d ? money(d) : "Free"}`,
       `*Total: ${money(total())}*`,
       ``,
-      `*Payment method:* ${f.pay}`,
+      `*Payment method:* Crypto`,
       ``,
       `*Customer*`,
       f.name.trim(),
