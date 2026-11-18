@@ -31,11 +31,11 @@ const SHOP = {
    A category only appears in the shop once it has a live product in it.
    ===================================================================== */
 const CATEGORIES = [
-  { id: "cat1", name: "Category 1" },
-  { id: "cat2", name: "Category 2" },
-  { id: "cat3", name: "Category 3" },
-  { id: "cat4", name: "Category 4" },
-  { id: "cat5", name: "Category 5" }
+  { id: "cat1", name: "Oils" },
+  { id: "cat2", name: "Orals" },
+  { id: "cat3", name: "Ancillaries" },
+  { id: "cat4", name: "Peptides" },
+  { id: "cat5", name: "HGH & Insulin" }
 ];
 
 /* =====================================================================
@@ -50,114 +50,114 @@ const PRODUCTS = [
   /* ==================== CAT1  (Category 1) — 50 products ==================== */
 
   {
-    id: "glutamine",
-    name: "L-Glutamine",
-    size: "500g",
+    id: "TE250",
+    name: "Testosterone 250mg",
+    size: "10ml",
     price: 30,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Glutamine powder. Unflavoured, single ingredient, mixes easily into water or shakes.",
+    tag: "Oil,
+    desc: "Testosterone Enanthate 250mg per ml. MCT, BB, BA.",
     inStock: true,
     show: true
   },
   {
-    id: "taurine",
-    name: "Taurine",
-    size: "500g",
+    id: "EQ300",
+    name: "Equipoise 300mg",
+    size: "10ml",
+    price: 30,
+    category: "cat1",
+    tag: "Oil",
+    desc: "Boldenone 300mg per ml. MCT, BB, BA.",
+    inStock: false,
+    show: true
+  },
+  {
+    id: "NPP100",
+    name: "NPP 100mg",
+    size: "10ml",
+    price: 27.50,
+    category: "cat1",
+    tag: "Oil",
+    desc: "Nandrolone Phenyl Propionate 100mg per ml. MCT, BB, BA.",
+    inStock: false,
+    show: true
+  },
+  {
+    id: "MastE",
+    name: "Masteron Enanthate 200mg",
+    size: "10ml",
     price: 45,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure taurine powder. Unflavoured, single ingredient, no fillers or additives.",
-    inStock: true,
+    tag: "Oil",
+    desc: "Drostanolone Enanthate 200mg per ml. MCT, BB, BA.",
+    inStock: False,
     show: true
   },
   {
-    id: "l-leucine-500g",
-    name: "L-Leucine",
-    size: "500g",
-    price: 0,
+    id: "MastP",
+    name: "Masteron Propionate 100mg",
+    size: "10ml",
+    price: 35,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Leucine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
+    tag: "Oil",
+    desc: "Drostanolone Propionate 100mg per ml. MCT, BB, BA.",
+    inStock: false,
+    show: true
   },
   {
-    id: "l-isoleucine-500g",
-    name: "L-Isoleucine",
-    size: "500g",
-    price: 0,
+    id: "TrenA",
+    name: "Trenbolone Acetate 100mg",
+    size: "10ml",
+    price: 30,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Isoleucine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
+    tag: "Oil",
+    desc: "Trenbolone Acetate 100mg. MCT, BB, BA.",
+    inStock: false,
+    show: true
   },
   {
-    id: "l-valine-500g",
-    name: "L-Valine",
-    size: "500g",
-    price: 0,
+    id: "TestC",
+    name: "Testosterone Cypionate 250mg/ml",
+    size: "10ml",
+    price: 30,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Valine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
+    tag: "Oils",
+    desc: "Testosterone Cypionate 250mg per ml. MCT, BB, BA.",
+    inStock: False,
+    show: true
   },
   {
-    id: "bcaa-2-1-1-500g",
-    name: "BCAA 2:1:1",
-    size: "500g",
-    price: 0,
+    id: "TestP",
+    name: "Testosterone Propionate 100mg",
+    size: "10ml",
+    price: 25,
     category: "cat1",
-    tag: "Amino",
-    desc: "BCAA 2:1:1 powder. Unflavoured.",
-    inStock: true,
-    show: false
+    tag: "Oils",
+    desc: "Testosterone Propionate 100mg.",
+    inStock: false,
+    show: true
   },
   {
-    id: "bcaa-4-1-1-500g",
-    name: "BCAA 4:1:1",
-    size: "500g",
-    price: 0,
+    id: "Primo100",
+    name: "Primobolan Enanthate 100mg",
+    size: "10ml",
+    price: 65,
     category: "cat1",
-    tag: "Amino",
-    desc: "BCAA 4:1:1 powder. Unflavoured.",
-    inStock: true,
-    show: false
+    tag: "Oils",
+    desc: "Primobolan Enanthate 100mg per ml. MCT, BB, BA..",
+    inStock: false,
+    show: true
   },
   {
-    id: "essential-amino-acids-eaa-500g",
-    name: "Essential Amino Acids (EAA)",
-    size: "500g",
-    price: 0,
+    id: "BolC",
+    name: "Boldenone Cypionate 250",
+    size: "10ml",
+    price: 35,
     category: "cat1",
-    tag: "Amino",
-    desc: "Essential Amino Acids (EAA) powder. Unflavoured.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "l-arginine-500g",
-    name: "L-Arginine",
-    size: "500g",
-    price: 0,
-    category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Arginine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "l-arginine-hcl-500g",
-    name: "L-Arginine HCl",
-    size: "500g",
-    price: 0,
-    category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Arginine HCl powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
+    tag: "Oil",
+    desc: "Boldenone Cypionate 250mg/ml. MCT, BB, BA.",
+    inStock: false,
+    show: true
   },
   {
     id: "arginine-akg-250g",
