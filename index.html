@@ -26,6 +26,19 @@ const SHOP = {
 };
 
 /* =====================================================================
+   CATEGORIES — rename by changing the name only (keep the id as it is).
+   Each product below says which category it's in, e.g.  category: "cat1"
+   A category only appears in the shop once it has a live product in it.
+   ===================================================================== */
+const CATEGORIES = [
+  { id: "cat1", name: "Category 1" },
+  { id: "cat2", name: "Category 2" },
+  { id: "cat3", name: "Category 3" },
+  { id: "cat4", name: "Category 4" },
+  { id: "cat5", name: "Category 5" }
+];
+
+/* =====================================================================
    PRODUCTS — to add one, copy a block { ... }, paste it below the last,
    and change the details. Keep the comma between blocks.
    show: false  = hidden from customers. Change to show: true to put it live.
@@ -34,41 +47,36 @@ const SHOP = {
    product builder, which writes the block for you.
    ===================================================================== */
 const PRODUCTS = [
-  {
-    id: "creatine",
-    name: "Creatine Monohydrate",
-    size: "500g",
-    price: 30,
-    tag: "Strength",
-    desc: "Pure creatine monohydrate. Unflavoured, single ingredient. Creatine increases physical performance in successive bursts of short-term, high-intensity exercise (3g daily).",
-    inStock: true
-  },
+  /* ==================== CAT1  (Category 1) — 50 products ==================== */
+
   {
     id: "glutamine",
     name: "L-Glutamine",
     size: "500g",
     price: 30,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Glutamine powder. Unflavoured, single ingredient, mixes easily into water or shakes.",
-    inStock: true
+    inStock: true,
+    show: true
   },
   {
     id: "taurine",
     name: "Taurine",
     size: "500g",
     price: 45,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure taurine powder. Unflavoured, single ingredient, no fillers or additives.",
-    inStock: true
+    inStock: true,
+    show: true
   },
-
-  /* ---------- READY TO EDIT: hidden until you set a price and change show: false to show: true ---------- */
-
   {
     id: "l-leucine-500g",
     name: "L-Leucine",
     size: "500g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Leucine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -79,6 +87,7 @@ const PRODUCTS = [
     name: "L-Isoleucine",
     size: "500g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Isoleucine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -89,6 +98,7 @@ const PRODUCTS = [
     name: "L-Valine",
     size: "500g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Valine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -99,6 +109,7 @@ const PRODUCTS = [
     name: "BCAA 2:1:1",
     size: "500g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "BCAA 2:1:1 powder. Unflavoured.",
     inStock: true,
@@ -109,6 +120,7 @@ const PRODUCTS = [
     name: "BCAA 4:1:1",
     size: "500g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "BCAA 4:1:1 powder. Unflavoured.",
     inStock: true,
@@ -119,6 +131,7 @@ const PRODUCTS = [
     name: "Essential Amino Acids (EAA)",
     size: "500g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Essential Amino Acids (EAA) powder. Unflavoured.",
     inStock: true,
@@ -129,6 +142,7 @@ const PRODUCTS = [
     name: "L-Arginine",
     size: "500g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Arginine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -139,6 +153,7 @@ const PRODUCTS = [
     name: "L-Arginine HCl",
     size: "500g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Arginine HCl powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -149,28 +164,9 @@ const PRODUCTS = [
     name: "Arginine AKG",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure Arginine AKG powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "l-citrulline-250g",
-    name: "L-Citrulline",
-    size: "250g",
-    price: 0,
-    tag: "Pump",
-    desc: "Pure L-Citrulline powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "citrulline-malate-2-1-500g",
-    name: "Citrulline Malate 2:1",
-    size: "500g",
-    price: 0,
-    tag: "Pump",
-    desc: "Pure Citrulline Malate 2:1 powder. Unflavoured, single ingredient.",
     inStock: true,
     show: false
   },
@@ -179,18 +175,9 @@ const PRODUCTS = [
     name: "L-Ornithine",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Ornithine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "beta-alanine-500g",
-    name: "Beta-Alanine",
-    size: "500g",
-    price: 0,
-    tag: "Performance",
-    desc: "Pure Beta-Alanine powder. Unflavoured, single ingredient.",
     inStock: true,
     show: false
   },
@@ -199,6 +186,7 @@ const PRODUCTS = [
     name: "L-Carnitine L-Tartrate",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Carnitine L-Tartrate powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -209,6 +197,7 @@ const PRODUCTS = [
     name: "Acetyl-L-Carnitine",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure Acetyl-L-Carnitine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -219,6 +208,7 @@ const PRODUCTS = [
     name: "L-Tyrosine",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Tyrosine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -229,6 +219,7 @@ const PRODUCTS = [
     name: "L-Theanine",
     size: "100g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Theanine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -239,6 +230,7 @@ const PRODUCTS = [
     name: "Glycine",
     size: "500g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure Glycine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -249,6 +241,7 @@ const PRODUCTS = [
     name: "L-Lysine",
     size: "500g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Lysine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -259,6 +252,7 @@ const PRODUCTS = [
     name: "L-Methionine",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Methionine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -269,6 +263,7 @@ const PRODUCTS = [
     name: "L-Threonine",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Threonine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -279,6 +274,7 @@ const PRODUCTS = [
     name: "L-Phenylalanine",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Phenylalanine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -289,6 +285,7 @@ const PRODUCTS = [
     name: "L-Histidine",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Histidine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -299,6 +296,7 @@ const PRODUCTS = [
     name: "L-Alanine",
     size: "500g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Alanine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -309,6 +307,7 @@ const PRODUCTS = [
     name: "L-Proline",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Proline powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -319,6 +318,7 @@ const PRODUCTS = [
     name: "L-Serine",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Serine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -329,118 +329,9 @@ const PRODUCTS = [
     name: "L-Cysteine",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Cysteine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "betaine-anhydrous-500g",
-    name: "Betaine Anhydrous",
-    size: "500g",
-    price: 0,
-    tag: "Performance",
-    desc: "Pure Betaine Anhydrous powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "creatine-hcl-250g",
-    name: "Creatine HCl",
-    size: "250g",
-    price: 0,
-    tag: "Strength",
-    desc: "Pure Creatine HCl powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "calcium-hmb-250g",
-    name: "Calcium HMB",
-    size: "250g",
-    price: 0,
-    tag: "Performance",
-    desc: "Pure Calcium HMB powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "hydrolysed-collagen-500g",
-    name: "Hydrolysed Collagen",
-    size: "500g",
-    price: 0,
-    tag: "Protein",
-    desc: "Hydrolysed Collagen powder. Unflavoured.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "whey-protein-isolate-1kg",
-    name: "Whey Protein Isolate",
-    size: "1kg",
-    price: 0,
-    tag: "Protein",
-    desc: "Whey Protein Isolate powder. Unflavoured.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "pea-protein-isolate-1kg",
-    name: "Pea Protein Isolate",
-    size: "1kg",
-    price: 0,
-    tag: "Protein",
-    desc: "Pea Protein Isolate powder. Unflavoured.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "rice-protein-1kg",
-    name: "Rice Protein",
-    size: "1kg",
-    price: 0,
-    tag: "Protein",
-    desc: "Rice Protein powder. Unflavoured.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "cluster-dextrin-1kg",
-    name: "Cluster Dextrin",
-    size: "1kg",
-    price: 0,
-    tag: "Carbs",
-    desc: "Cluster Dextrin powder. Unflavoured.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "dextrose-1kg",
-    name: "Dextrose",
-    size: "1kg",
-    price: 0,
-    tag: "Carbs",
-    desc: "Dextrose powder. Unflavoured.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "creatine-monohydrate-250g",
-    name: "Creatine Monohydrate",
-    size: "250g",
-    price: 0,
-    tag: "Strength",
-    desc: "Pure Creatine Monohydrate powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "creatine-monohydrate-1kg",
-    name: "Creatine Monohydrate",
-    size: "1kg",
-    price: 0,
-    tag: "Strength",
-    desc: "Pure Creatine Monohydrate powder. Unflavoured, single ingredient.",
     inStock: true,
     show: false
   },
@@ -449,6 +340,7 @@ const PRODUCTS = [
     name: "L-Glutamine",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Glutamine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -459,6 +351,7 @@ const PRODUCTS = [
     name: "L-Glutamine",
     size: "1kg",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Glutamine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -469,6 +362,7 @@ const PRODUCTS = [
     name: "Taurine",
     size: "250g",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure Taurine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -479,18 +373,9 @@ const PRODUCTS = [
     name: "Taurine",
     size: "1kg",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure Taurine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "beta-alanine-1kg",
-    name: "Beta-Alanine",
-    size: "1kg",
-    price: 0,
-    tag: "Performance",
-    desc: "Pure Beta-Alanine powder. Unflavoured, single ingredient.",
     inStock: true,
     show: false
   },
@@ -499,6 +384,7 @@ const PRODUCTS = [
     name: "L-Leucine",
     size: "1kg",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure L-Leucine powder. Unflavoured, single ingredient.",
     inStock: true,
@@ -509,6 +395,7 @@ const PRODUCTS = [
     name: "BCAA 2:1:1",
     size: "1kg",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "BCAA 2:1:1 powder. Unflavoured.",
     inStock: true,
@@ -519,18 +406,9 @@ const PRODUCTS = [
     name: "Essential Amino Acids (EAA)",
     size: "1kg",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Essential Amino Acids (EAA) powder. Unflavoured.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "citrulline-malate-2-1-1kg",
-    name: "Citrulline Malate 2:1",
-    size: "1kg",
-    price: 0,
-    tag: "Pump",
-    desc: "Pure Citrulline Malate 2:1 powder. Unflavoured, single ingredient.",
     inStock: true,
     show: false
   },
@@ -539,8 +417,818 @@ const PRODUCTS = [
     name: "Glycine",
     size: "1kg",
     price: 0,
+    category: "cat1",
     tag: "Amino",
     desc: "Pure Glycine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-35",
+    name: "New product 35",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-36",
+    name: "New product 36",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-37",
+    name: "New product 37",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-38",
+    name: "New product 38",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-39",
+    name: "New product 39",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-40",
+    name: "New product 40",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-41",
+    name: "New product 41",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-42",
+    name: "New product 42",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-43",
+    name: "New product 43",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-44",
+    name: "New product 44",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-45",
+    name: "New product 45",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-46",
+    name: "New product 46",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-47",
+    name: "New product 47",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-48",
+    name: "New product 48",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-49",
+    name: "New product 49",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat1-slot-50",
+    name: "New product 50",
+    size: "",
+    price: 0,
+    category: "cat1",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+
+  /* ==================== CAT2  (Category 2) — 50 products ==================== */
+
+  {
+    id: "creatine",
+    name: "Creatine Monohydrate",
+    size: "500g",
+    price: 30,
+    category: "cat2",
+    tag: "Strength",
+    desc: "Pure creatine monohydrate. Unflavoured, single ingredient. Creatine increases physical performance in successive bursts of short-term, high-intensity exercise (3g daily).",
+    inStock: true,
+    show: true
+  },
+  {
+    id: "creatine-hcl-250g",
+    name: "Creatine HCl",
+    size: "250g",
+    price: 0,
+    category: "cat2",
+    tag: "Strength",
+    desc: "Pure Creatine HCl powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "creatine-monohydrate-250g",
+    name: "Creatine Monohydrate",
+    size: "250g",
+    price: 0,
+    category: "cat2",
+    tag: "Strength",
+    desc: "Pure Creatine Monohydrate powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "creatine-monohydrate-1kg",
+    name: "Creatine Monohydrate",
+    size: "1kg",
+    price: 0,
+    category: "cat2",
+    tag: "Strength",
+    desc: "Pure Creatine Monohydrate powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-5",
+    name: "New product 5",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-6",
+    name: "New product 6",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-7",
+    name: "New product 7",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-8",
+    name: "New product 8",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-9",
+    name: "New product 9",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-10",
+    name: "New product 10",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-11",
+    name: "New product 11",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-12",
+    name: "New product 12",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-13",
+    name: "New product 13",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-14",
+    name: "New product 14",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-15",
+    name: "New product 15",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-16",
+    name: "New product 16",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-17",
+    name: "New product 17",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-18",
+    name: "New product 18",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-19",
+    name: "New product 19",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-20",
+    name: "New product 20",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-21",
+    name: "New product 21",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-22",
+    name: "New product 22",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-23",
+    name: "New product 23",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-24",
+    name: "New product 24",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-25",
+    name: "New product 25",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-26",
+    name: "New product 26",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-27",
+    name: "New product 27",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-28",
+    name: "New product 28",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-29",
+    name: "New product 29",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-30",
+    name: "New product 30",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-31",
+    name: "New product 31",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-32",
+    name: "New product 32",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-33",
+    name: "New product 33",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-34",
+    name: "New product 34",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-35",
+    name: "New product 35",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-36",
+    name: "New product 36",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-37",
+    name: "New product 37",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-38",
+    name: "New product 38",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-39",
+    name: "New product 39",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-40",
+    name: "New product 40",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-41",
+    name: "New product 41",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-42",
+    name: "New product 42",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-43",
+    name: "New product 43",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-44",
+    name: "New product 44",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-45",
+    name: "New product 45",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-46",
+    name: "New product 46",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-47",
+    name: "New product 47",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-48",
+    name: "New product 48",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-49",
+    name: "New product 49",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat2-slot-50",
+    name: "New product 50",
+    size: "",
+    price: 0,
+    category: "cat2",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+
+  /* ==================== CAT3  (Category 3) — 50 products ==================== */
+
+  {
+    id: "l-citrulline-250g",
+    name: "L-Citrulline",
+    size: "250g",
+    price: 0,
+    category: "cat3",
+    tag: "Pump",
+    desc: "Pure L-Citrulline powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "citrulline-malate-2-1-500g",
+    name: "Citrulline Malate 2:1",
+    size: "500g",
+    price: 0,
+    category: "cat3",
+    tag: "Pump",
+    desc: "Pure Citrulline Malate 2:1 powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "beta-alanine-500g",
+    name: "Beta-Alanine",
+    size: "500g",
+    price: 0,
+    category: "cat3",
+    tag: "Performance",
+    desc: "Pure Beta-Alanine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "betaine-anhydrous-500g",
+    name: "Betaine Anhydrous",
+    size: "500g",
+    price: 0,
+    category: "cat3",
+    tag: "Performance",
+    desc: "Pure Betaine Anhydrous powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "calcium-hmb-250g",
+    name: "Calcium HMB",
+    size: "250g",
+    price: 0,
+    category: "cat3",
+    tag: "Performance",
+    desc: "Pure Calcium HMB powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "beta-alanine-1kg",
+    name: "Beta-Alanine",
+    size: "1kg",
+    price: 0,
+    category: "cat3",
+    tag: "Performance",
+    desc: "Pure Beta-Alanine powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "citrulline-malate-2-1-1kg",
+    name: "Citrulline Malate 2:1",
+    size: "1kg",
+    price: 0,
+    category: "cat3",
+    tag: "Pump",
+    desc: "Pure Citrulline Malate 2:1 powder. Unflavoured, single ingredient.",
     inStock: true,
     show: false
   },
@@ -549,8 +1237,518 @@ const PRODUCTS = [
     name: "Betaine Anhydrous",
     size: "1kg",
     price: 0,
+    category: "cat3",
     tag: "Performance",
     desc: "Pure Betaine Anhydrous powder. Unflavoured, single ingredient.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-9",
+    name: "New product 9",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-10",
+    name: "New product 10",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-11",
+    name: "New product 11",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-12",
+    name: "New product 12",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-13",
+    name: "New product 13",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-14",
+    name: "New product 14",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-15",
+    name: "New product 15",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-16",
+    name: "New product 16",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-17",
+    name: "New product 17",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-18",
+    name: "New product 18",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-19",
+    name: "New product 19",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-20",
+    name: "New product 20",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-21",
+    name: "New product 21",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-22",
+    name: "New product 22",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-23",
+    name: "New product 23",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-24",
+    name: "New product 24",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-25",
+    name: "New product 25",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-26",
+    name: "New product 26",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-27",
+    name: "New product 27",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-28",
+    name: "New product 28",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-29",
+    name: "New product 29",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-30",
+    name: "New product 30",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-31",
+    name: "New product 31",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-32",
+    name: "New product 32",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-33",
+    name: "New product 33",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-34",
+    name: "New product 34",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-35",
+    name: "New product 35",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-36",
+    name: "New product 36",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-37",
+    name: "New product 37",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-38",
+    name: "New product 38",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-39",
+    name: "New product 39",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-40",
+    name: "New product 40",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-41",
+    name: "New product 41",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-42",
+    name: "New product 42",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-43",
+    name: "New product 43",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-44",
+    name: "New product 44",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-45",
+    name: "New product 45",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-46",
+    name: "New product 46",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-47",
+    name: "New product 47",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-48",
+    name: "New product 48",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-49",
+    name: "New product 49",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat3-slot-50",
+    name: "New product 50",
+    size: "",
+    price: 0,
+    category: "cat3",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+
+  /* ==================== CAT4  (Category 4) — 50 products ==================== */
+
+  {
+    id: "hydrolysed-collagen-500g",
+    name: "Hydrolysed Collagen",
+    size: "500g",
+    price: 0,
+    category: "cat4",
+    tag: "Protein",
+    desc: "Hydrolysed Collagen powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "whey-protein-isolate-1kg",
+    name: "Whey Protein Isolate",
+    size: "1kg",
+    price: 0,
+    category: "cat4",
+    tag: "Protein",
+    desc: "Whey Protein Isolate powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "pea-protein-isolate-1kg",
+    name: "Pea Protein Isolate",
+    size: "1kg",
+    price: 0,
+    category: "cat4",
+    tag: "Protein",
+    desc: "Pea Protein Isolate powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "rice-protein-1kg",
+    name: "Rice Protein",
+    size: "1kg",
+    price: 0,
+    category: "cat4",
+    tag: "Protein",
+    desc: "Rice Protein powder. Unflavoured.",
     inStock: true,
     show: false
   },
@@ -559,8 +1757,1057 @@ const PRODUCTS = [
     name: "Hydrolysed Collagen",
     size: "1kg",
     price: 0,
+    category: "cat4",
     tag: "Protein",
     desc: "Hydrolysed Collagen powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-6",
+    name: "New product 6",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-7",
+    name: "New product 7",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-8",
+    name: "New product 8",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-9",
+    name: "New product 9",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-10",
+    name: "New product 10",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-11",
+    name: "New product 11",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-12",
+    name: "New product 12",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-13",
+    name: "New product 13",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-14",
+    name: "New product 14",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-15",
+    name: "New product 15",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-16",
+    name: "New product 16",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-17",
+    name: "New product 17",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-18",
+    name: "New product 18",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-19",
+    name: "New product 19",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-20",
+    name: "New product 20",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-21",
+    name: "New product 21",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-22",
+    name: "New product 22",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-23",
+    name: "New product 23",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-24",
+    name: "New product 24",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-25",
+    name: "New product 25",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-26",
+    name: "New product 26",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-27",
+    name: "New product 27",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-28",
+    name: "New product 28",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-29",
+    name: "New product 29",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-30",
+    name: "New product 30",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-31",
+    name: "New product 31",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-32",
+    name: "New product 32",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-33",
+    name: "New product 33",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-34",
+    name: "New product 34",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-35",
+    name: "New product 35",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-36",
+    name: "New product 36",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-37",
+    name: "New product 37",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-38",
+    name: "New product 38",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-39",
+    name: "New product 39",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-40",
+    name: "New product 40",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-41",
+    name: "New product 41",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-42",
+    name: "New product 42",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-43",
+    name: "New product 43",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-44",
+    name: "New product 44",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-45",
+    name: "New product 45",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-46",
+    name: "New product 46",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-47",
+    name: "New product 47",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-48",
+    name: "New product 48",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-49",
+    name: "New product 49",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat4-slot-50",
+    name: "New product 50",
+    size: "",
+    price: 0,
+    category: "cat4",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+
+  /* ==================== CAT5  (Category 5) — 50 products ==================== */
+
+  {
+    id: "cluster-dextrin-1kg",
+    name: "Cluster Dextrin",
+    size: "1kg",
+    price: 0,
+    category: "cat5",
+    tag: "Carbs",
+    desc: "Cluster Dextrin powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "dextrose-1kg",
+    name: "Dextrose",
+    size: "1kg",
+    price: 0,
+    category: "cat5",
+    tag: "Carbs",
+    desc: "Dextrose powder. Unflavoured.",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-3",
+    name: "New product 3",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-4",
+    name: "New product 4",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-5",
+    name: "New product 5",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-6",
+    name: "New product 6",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-7",
+    name: "New product 7",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-8",
+    name: "New product 8",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-9",
+    name: "New product 9",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-10",
+    name: "New product 10",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-11",
+    name: "New product 11",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-12",
+    name: "New product 12",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-13",
+    name: "New product 13",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-14",
+    name: "New product 14",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-15",
+    name: "New product 15",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-16",
+    name: "New product 16",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-17",
+    name: "New product 17",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-18",
+    name: "New product 18",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-19",
+    name: "New product 19",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-20",
+    name: "New product 20",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-21",
+    name: "New product 21",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-22",
+    name: "New product 22",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-23",
+    name: "New product 23",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-24",
+    name: "New product 24",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-25",
+    name: "New product 25",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-26",
+    name: "New product 26",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-27",
+    name: "New product 27",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-28",
+    name: "New product 28",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-29",
+    name: "New product 29",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-30",
+    name: "New product 30",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-31",
+    name: "New product 31",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-32",
+    name: "New product 32",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-33",
+    name: "New product 33",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-34",
+    name: "New product 34",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-35",
+    name: "New product 35",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-36",
+    name: "New product 36",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-37",
+    name: "New product 37",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-38",
+    name: "New product 38",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-39",
+    name: "New product 39",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-40",
+    name: "New product 40",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-41",
+    name: "New product 41",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-42",
+    name: "New product 42",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-43",
+    name: "New product 43",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-44",
+    name: "New product 44",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-45",
+    name: "New product 45",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-46",
+    name: "New product 46",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-47",
+    name: "New product 47",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-48",
+    name: "New product 48",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-49",
+    name: "New product 49",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
+    inStock: true,
+    show: false
+  },
+  {
+    id: "cat5-slot-50",
+    name: "New product 50",
+    size: "",
+    price: 0,
+    category: "cat5",
+    tag: "",
+    desc: "",
     inStock: true,
     show: false
   }
@@ -607,6 +2854,15 @@ main{max-width:1080px;margin:0 auto;padding:28px 16px}
 .section-head{display:flex;align-items:baseline;justify-content:space-between;margin:0 4px 16px}
 .section-head h2{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:600}
 .section-head small{color:var(--muted);font-size:13px}
+
+/* Categories */
+.chips{position:sticky;top:calc(var(--safe-t) + 72px);z-index:10;display:flex;gap:8px;overflow-x:auto;padding:10px 4px 12px;margin:0 -16px 8px;padding-left:20px;padding-right:20px;background:var(--ivory);scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px;font-weight:500;white-space:nowrap}
+.chip.on{background:var(--black);color:var(--gold-2);border-color:var(--black)}
+.cat-title{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;margin:22px 4px 12px;display:flex;align-items:center;gap:12px}
+.cat-title::after{content:"";flex:1;height:1px;background:var(--line)}
+.cat-title:first-child{margin-top:4px}
 
 /* Products */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
@@ -736,7 +2992,8 @@ body.owner #owner{display:block}
 
   <main>
     <div class="section-head"><h2>The range</h2><small id="count"></small></div>
-    <div class="grid" id="grid"></div>
+    <div class="chips" id="chips"></div>
+    <div id="grid"></div>
   </main>
 
   <footer>
@@ -758,7 +3015,10 @@ body.owner #owner{display:block}
           <label>Size<input id="o_size" value="500g"></label>
           <label>Price (£)<input id="o_price" type="number" step="0.01" min="0" value="30" inputmode="decimal"></label>
         </div>
-        <label>Label (small badge)<input id="o_tag" value="Amino"></label>
+        <div class="row">
+          <label>Category<select id="o_cat"></select></label>
+          <label>Label (small badge)<input id="o_tag" value="Amino"></label>
+        </div>
         <label>Description<textarea id="o_desc">Pure L-Leucine powder. Unflavoured, single ingredient.</textarea></label>
         <label class="tick"><input type="checkbox" id="o_stock" checked> In stock</label>
       </form>
@@ -903,8 +3163,27 @@ body.owner #owner{display:block}
       </div></article>`;
   }
 
+  let activeCat = "all";
+  const catName = id => (CATEGORIES.find(c => c.id === id) || {}).name;
+  function renderChips(){
+    const used = CATEGORIES.filter(c => LIVE.some(p => p.category === c.id));
+    if (activeCat !== "all" && !used.some(c => c.id === activeCat)) activeCat = "all";
+    $("#chips").hidden = used.length < 2;
+    $("#chips").innerHTML = [{id:"all", name:"All"}, ...used].map(c => `<button class="chip ${c.id === activeCat ? "on" : ""}" data-cat="${esc(c.id)}">${esc(c.name)}</button>`).join("");
+  }
+  const gridOf = list => `<div class="grid">${list.map(p => cardHTML(p)).join("")}</div>`;
   function render(){
-    $("#grid").innerHTML = LIVE.map(p => cardHTML(p)).join("");
+    renderChips();
+    let html = "";
+    if (activeCat === "all"){
+      const groups = CATEGORIES.map(c => [c.name, LIVE.filter(p => p.category === c.id)]).filter(g => g[1].length);
+      const other = LIVE.filter(p => !catName(p.category));
+      if (other.length) groups.push([groups.length ? "More" : "", other]);
+      html = groups.map(([name, list]) => (groups.length > 1 && name ? `<h3 class="cat-title">${esc(name)}</h3>` : "") + gridOf(list)).join("");
+    } else {
+      html = gridOf(LIVE.filter(p => p.category === activeCat));
+    }
+    $("#grid").innerHTML = html;
     $("#count").textContent = LIVE.length + (LIVE.length === 1 ? " product" : " products");
     const n = qtyCount();
     $("#badge").hidden = !n; $("#badge").textContent = n;
@@ -913,6 +3192,7 @@ body.owner #owner{display:block}
     $("#barTotal").textContent = money(subtotal());
     renderCart();
   }
+
 
   function totalsHTML(){
     const s = subtotal(), d = delivery();
@@ -944,6 +3224,7 @@ body.owner #owner{display:block}
 
   document.addEventListener("click", e => {
     const t = e.target.closest("button,a"); if (!t) return;
+    if (t.dataset.cat){ activeCat = t.dataset.cat; render(); $("#chips").scrollIntoView({block:"start", behavior:"smooth"}); return; }
     if (t.dataset.inc){ const was = cart[t.dataset.inc] || 0; setQty(t.dataset.inc, was + 1); if (!was) toast(byId(t.dataset.inc).name + " added"); }
     else if (t.dataset.dec){ setQty(t.dataset.dec, (cart[t.dataset.dec] || 0) - 1); }
     else if (t.dataset.detail){ const p = byId(t.dataset.detail); $("#detailBody").innerHTML = `<h2>${esc(p.name)}</h2><p class="sub">${esc(p.size)} · ${money(p.price)}</p><p style="font-size:14.5px;margin-bottom:18px">${esc(p.desc)}</p>${p.inStock ? `<button class="btn btn-dark" data-inc="${esc(p.id)}">Add to basket</button>` : ""}`; show("#detailSheet"); }
@@ -1034,13 +3315,14 @@ body.owner #owner{display:block}
   const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") || "product";
   const js = s => JSON.stringify(String(s));
   function ownerProduct(){
-    return { id: slug($("#o_name").value), name: $("#o_name").value.trim() || "New product", size: $("#o_size").value.trim(), price: Number($("#o_price").value) || 0, tag: $("#o_tag").value.trim(), desc: $("#o_desc").value.trim(), inStock: $("#o_stock").checked };
+    return { id: slug($("#o_name").value), name: $("#o_name").value.trim() || "New product", size: $("#o_size").value.trim(), price: Number($("#o_price").value) || 0, category: $("#o_cat").value, tag: $("#o_tag").value.trim(), desc: $("#o_desc").value.trim(), inStock: $("#o_stock").checked };
   }
   function renderOwner(){
     const p = ownerProduct();
     $("#ownerPreview").innerHTML = cardHTML(p, true);
-    $("#ownerCode").textContent = `  ,{\n    id: ${js(p.id)},\n    name: ${js(p.name)},\n    size: ${js(p.size)},\n    price: ${p.price},\n    tag: ${js(p.tag)},\n    desc: ${js(p.desc)},\n    inStock: ${p.inStock},\n    show: true\n  }`;
+    $("#ownerCode").textContent = `  ,{\n    id: ${js(p.id)},\n    name: ${js(p.name)},\n    size: ${js(p.size)},\n    price: ${p.price},\n    category: ${js(p.category)},\n    tag: ${js(p.tag)},\n    desc: ${js(p.desc)},\n    inStock: ${p.inStock},\n    show: true\n  }`;
   }
+  $("#o_cat").innerHTML = CATEGORIES.map(c => `<option value="${esc(c.id)}">${esc(c.name)}</option>`).join("");
   $("#ownerForm").addEventListener("input", renderOwner);
   $("#ownerForm").addEventListener("change", renderOwner);
   $("#copyProduct").onclick = () => copy($("#ownerCode").textContent, "Product copied. Paste it after the last product");
