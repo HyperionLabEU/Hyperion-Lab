@@ -22,7 +22,7 @@ const SHOP = {
   whatsapp: "447000000000",   // Your WhatsApp number: 44 then your number without the first 0, no spaces (e.g. 447712345678)
   currency: "£",
   delivery: 3.95,             // Standard UK delivery charge
-  freeDeliveryOver: 75,       // Free delivery when basket is this much or more (set 0 to switch off)
+  freeDeliveryOver: 0,       // Free delivery when basket is this much or more (set 0 to switch off)
 };
 
 /* =====================================================================
@@ -1710,92 +1710,92 @@ const PRODUCTS = [
   /* ==================== CAT4  (Category 4) — 50 products ==================== */
 
   {
-    id: "hydrolysed-collagen-500g",
-    name: "Hydrolysed Collagen",
-    size: "500g",
-    price: 0,
+    id: "reta30",
+    name: "Retatrutide 30mg Vial",
+    size: "30mg",
+    price: 70,
     category: "cat4",
-    tag: "Protein",
-    desc: "Hydrolysed Collagen powder. Unflavoured.",
+    tag: "reta",
+    desc: "Retatrutide 30mg Vial.",
+    inStock: true,
+    show: true
+  },
+  {
+    id: "Reta10",
+    name: "Retatrutide 10mg Vial",
+    size: "10mg",
+    price: 40,
+    category: "cat4",
+    tag: "reta",
+    desc: "Retatrutide 10mg Vial.",
+    inStock: true,
+    show: true
+  },
+  {
+    id: "mots40",
+    name: "MOTS-C 40mg",
+    size: "40mg",
+    price: 40,
+    category: "cat4",
+    tag: "motsc",
+    desc: "MOTS-C 40mg Vial.",
+    inStock: true,
+    show: true
+  },
+  {
+    id: "SS3150",
+    name: "SS31 50mg Vial",
+    size: "50mg",
+    price: 45,
+    category: "cat4",
+    tag: "ss31",
+    desc: "SS31 50mg Vial.",
+    inStock: true,
+    show: true
+  },
+  {
+    id: "bpctn",
+    name: "BPC-157 10mg + TB500 10mg",
+    size: "10mg+10mg",
+    price: 30,
+    category: "cat4",
+    tag: "bpc",
+    desc: "10mg BPC-157 and 10mg TB500 Blend.",
+    inStock: true,
+    show: true
+  },
+  {
+    id: "retapen",
+    name: "Retatrutide Pen",
+    size: "30mg",
+    price: 120,
+    category: "cat4",
+    tag: "reta",
+    desc: "Disposable Retatrutide pen with 30mg.",
     inStock: true,
     show: false
   },
   {
-    id: "whey-protein-isolate-1kg",
-    name: "Whey Protein Isolate",
-    size: "1kg",
-    price: 0,
+    id: "5a",
+    name: "5 Amino 1 MQ",
+    size: "50mg",
+    price: 25,
     category: "cat4",
-    tag: "Protein",
-    desc: "Whey Protein Isolate powder. Unflavoured.",
+    tag: "5amino",
+    desc: "50mg Vial 5-Amino-1-MQ",
     inStock: true,
-    show: false
+    show: true
   },
   {
-    id: "pea-protein-isolate-1kg",
-    name: "Pea Protein Isolate",
-    size: "1kg",
-    price: 0,
+    id: "Tirz",
+    name: "Tirzepatide Vial 30mg",
+    size: "30mg",
+    price: 50,
     category: "cat4",
-    tag: "Protein",
-    desc: "Pea Protein Isolate powder. Unflavoured.",
+    tag: "tirz",
+    desc: "Tirzepatide 30mg Vial",
     inStock: true,
-    show: false
-  },
-  {
-    id: "rice-protein-1kg",
-    name: "Rice Protein",
-    size: "1kg",
-    price: 0,
-    category: "cat4",
-    tag: "Protein",
-    desc: "Rice Protein powder. Unflavoured.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "hydrolysed-collagen-1kg",
-    name: "Hydrolysed Collagen",
-    size: "1kg",
-    price: 0,
-    category: "cat4",
-    tag: "Protein",
-    desc: "Hydrolysed Collagen powder. Unflavoured.",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "cat4-slot-6",
-    name: "New product 6",
-    size: "",
-    price: 0,
-    category: "cat4",
-    tag: "",
-    desc: "",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "cat4-slot-7",
-    name: "New product 7",
-    size: "",
-    price: 0,
-    category: "cat4",
-    tag: "",
-    desc: "",
-    inStock: true,
-    show: false
-  },
-  {
-    id: "cat4-slot-8",
-    name: "New product 8",
-    size: "",
-    price: 0,
-    category: "cat4",
-    tag: "",
-    desc: "",
-    inStock: true,
-    show: false
+    show: true
   },
   {
     id: "cat4-slot-9",
@@ -2263,70 +2263,70 @@ const PRODUCTS = [
   /* ==================== CAT5  (Category 5) — 50 products ==================== */
 
   {
-    id: "cluster-dextrin-1kg",
-    name: "Cluster Dextrin",
-    size: "1kg",
-    price: 0,
+    id: "HGH100",
+    name: "HGH 10x10iu",
+    size: "100iu",
+    price: 130,
     category: "cat5",
-    tag: "Carbs",
-    desc: "Cluster Dextrin powder. Unflavoured.",
+    tag: "GH",
+    desc: "Human Growth Hormone 10 x 10iu & Bacteriostatic Water.",
     inStock: true,
-    show: false
+    show: true
   },
   {
-    id: "dextrose-1kg",
-    name: "Dextrose",
-    size: "1kg",
-    price: 0,
+    id: "novop",
+    name: "Novorapid Pen 300iu",
+    size: "300iu",
+    price: 25,
     category: "cat5",
-    tag: "Carbs",
-    desc: "Dextrose powder. Unflavoured.",
+    tag: "Insulin",
+    desc: "Rapid Acting Insulin.",
     inStock: true,
-    show: false
+    show: true
   },
   {
-    id: "cat5-slot-3",
-    name: "New product 3",
-    size: "",
-    price: 0,
+    id: "fiasp",
+    name: "Fiasp Insulin 300iu",
+    size: "300iu",
+    price: 30,
     category: "cat5",
-    tag: "",
-    desc: "",
+    tag: "insulin",
+    desc: "Fiasp Ultra Rapid Acting Insulin. 300iu Pen",
     inStock: true,
-    show: false
+    show: true
   },
   {
-    id: "cat5-slot-4",
-    name: "New product 4",
-    size: "",
-    price: 0,
+    id: "lantus",
+    name: "Lantus Pen 300iu",
+    size: "300iu",
+    price: 25,
     category: "cat5",
-    tag: "",
-    desc: "",
+    tag: "Insulin",
+    desc: "Lantus Basal Insulin. 300iu Pen",
     inStock: true,
-    show: false
+    show: true
   },
   {
-    id: "cat5-slot-5",
-    name: "New product 5",
-    size: "",
-    price: 0,
+    id: "tresiba",
+    name: "Tresiba Cartridge 300iu",
+    size: "300iu",
+    price: 35,
     category: "cat5",
-    tag: "",
-    desc: "",
+    tag: "insulin",
+    desc: "Ultra long acting basal insulin. 300iu Cartridge",
     inStock: true,
-    show: false
+    show: true
   },
   {
-    id: "cat5-slot-6",
-    name: "New product 6",
-    size: "",
-    price: 0,
+    id: "humalog",
+    name: "Humalog Insulin",
+    size: "300iu",
+    price: 35,
     category: "cat5",
-    tag: "",
-    desc: "",
-    inStock: true,
-    show: false
+    tag: "insulin",
+    desc: "Humalog Insulin",
+    inStock: false,
+    show: true
   },
   {
     id: "cat5-slot-7",
@@ -2987,7 +2987,7 @@ body.owner #owner{display:block}
   <section class="hero">
     <div class="eyebrow">One Stop Shop</div>
     <h1>Honest. Reliable.<br><em>Quality.</em></h1>
-    <p>Choose your products, add your delivery details and await instruction. Payment is crypto only.</p>
+    <p>Select your items and send the order to whatsapp. Nothing is charged on this site..</p>
     <div class="pills"><span class="pill">Trustworthy</span><span class="pill">All Batches Tested</span><span class="pill">Next Day UK delivery</span></div>
   </section>
 
