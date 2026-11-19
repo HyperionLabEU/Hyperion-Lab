@@ -31,11 +31,12 @@ const SHOP = {
    A category only appears in the shop once it has a live product in it.
    ===================================================================== */
 const CATEGORIES = [
-  { id: "cat1", name: "Oils" },
+  { id: "cat1", name: "Injectables" },
   { id: "cat2", name: "Orals" },
   { id: "cat3", name: "Ancillaries" },
   { id: "cat4", name: "Peptides" },
   { id: "cat5", name: "HGH & Insulin" }
+  { id: "cat6", name: "Aminos" }
 ];
 
 /* =====================================================================
@@ -160,136 +161,136 @@ const PRODUCTS = [
     show: true
   },
   {
-    id: "arginine-akg-250g",
-    name: "Arginine AKG",
-    size: "250g",
-    price: 0,
+    id: "OX50",
+    name: "Anadrol 50",
+    size: "10ml",
+    price: 35,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure Arginine AKG powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
+    tag: "Oil",
+    desc: "Anadrol 50mg per ml.",
+    inStock: false,
+    show: true
   },
   {
-    id: "l-ornithine-250g",
-    name: "L-Ornithine",
-    size: "250g",
-    price: 0,
+    id: "SDO",
+    name: "Superdrol 50",
+    size: "10ml",
+    price: 35,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Ornithine powder. Unflavoured, single ingredient.",
+    tag: "Oils",
+    desc: "Superdrol 50mg per ml.",
     inStock: true,
-    show: false
+    show: true
   },
   {
-    id: "l-carnitine-l-tartrate-250g",
-    name: "L-Carnitine L-Tartrate",
-    size: "250g",
-    price: 0,
+    id: "TNE",
+    name: "Testosterone No Ester",
+    size: "10ml",
+    price: 30,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Carnitine L-Tartrate powder. Unflavoured, single ingredient.",
+    tag: "Oil",
+    desc: "Testosterone No Ester 100mg per ml.",
     inStock: true,
-    show: false
+    show: true
   },
   {
-    id: "acetyl-l-carnitine-250g",
-    name: "Acetyl-L-Carnitine",
-    size: "250g",
-    price: 0,
+    id: "Stan",
+    name: "Stanolone DHT 50mg/ml",
+    size: "10ml",
+    price: 40,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure Acetyl-L-Carnitine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
+    tag: "Oils",
+    desc: "Stanolone DHT, no ester, 50mg per ml.",
+    inStock: false,
+    show: true
   },
   {
-    id: "l-tyrosine-250g",
-    name: "L-Tyrosine",
-    size: "250g",
-    price: 0,
+    id: "TrenE",
+    name: "Trenbolone Enanthate 200",
+    size: "10ml",
+    price: 35,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Tyrosine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
+    tag: "Oils",
+    desc: "Trenbolone Enanthate 200mg per ml.",
+    inStock: false,
+    show: true
   },
   {
-    id: "l-theanine-100g",
-    name: "L-Theanine",
-    size: "100g",
-    price: 0,
+    id: "Hex",
+    name: "Trenbolone hexahydrobenzylcarbonate 100",
+    size: "10ml",
+    price: 40,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Theanine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
+    tag: "Oils",
+    desc: "Trenbolone hexahydrobenzylcarbonate 100mg per ml.",
+    inStock: false,
+    show: true
   },
   {
-    id: "glycine-500g",
-    name: "Glycine",
-    size: "500g",
-    price: 0,
+    id: "Deca",
+    name: "Nandrolone Decanoate 300",
+    size: "10ml",
+    price: 35,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure Glycine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
+    tag: "Oils",
+    desc: "Nadrolone Decanoate 300mg per ml.",
+    inStock: false,
+    show: true
   },
   {
-    id: "l-lysine-500g",
-    name: "L-Lysine",
-    size: "500g",
-    price: 0,
+    id: "Win100",
+    name: "Winstrol 100",
+    size: "10ml",
+    price: 35,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Lysine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
+    tag: "Oils",
+    desc: "Winstrol 100mg per ml.",
+    inStock: false,
+    show: true
   },
   {
-    id: "l-methionine-250g",
-    name: "L-Methionine",
-    size: "250g",
-    price: 0,
+    id: "DHB",
+    name: "Dihydroboldenone DHB 100",
+    size: "10ml",
+    price: 40,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Methionine powder. Unflavoured, single ingredient.",
+    tag: "Oils",
+    desc: "Dihydroboldenone 100mg per ml.",
     inStock: true,
-    show: false
+    show: true
   },
   {
-    id: "l-threonine-250g",
-    name: "L-Threonine",
-    size: "250g",
-    price: 0,
+    id: "Ment",
+    name: "Trestolone Acetate 50",
+    size: "10ml",
+    price: 50,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Threonine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
+    tag: "Oils",
+    desc: "Trestolone Acetate 50mg per ml.",
+    inStock: false,
+    show: true
   },
   {
-    id: "l-phenylalanine-250g",
-    name: "L-Phenylalanine",
-    size: "250g",
-    price: 0,
+    id: "Mtren",
+    name: "Metribolone 5",
+    size: "10ml",
+    price: 30,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Phenylalanine powder. Unflavoured, single ingredient.",
-    inStock: true,
-    show: false
+    tag: "Oils",
+    desc: "M-Tren 5mg per ml.",
+    inStock: false,
+    show: true
   },
   {
-    id: "l-histidine-250g",
-    name: "L-Histidine",
-    size: "250g",
-    price: 0,
+    id: "Lcarn",
+    name: "L-Carnitine 750",
+    size: "50ml",
+    price: 45,
     category: "cat1",
-    tag: "Amino",
-    desc: "Pure L-Histidine powder. Unflavoured, single ingredient.",
+    tag: "Aminos",
+    desc: "L-Carnitine 750mg per ml PIP free.",
     inStock: true,
-    show: false
+    show: true
   },
   {
     id: "l-alanine-500g",
